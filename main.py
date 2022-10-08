@@ -26,9 +26,8 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:  # Left Click
-                handler.tick()
-                bar.update(handler.calculateBPM_raw())
+        if event.type == pygame.MOUSEBUTTONDOWN or event.type == pygame.KEYDOWN:
+            handler.tick()
+            bar.update(handler.calculateBPM_raw())
     draw()
 pygame.quit()
